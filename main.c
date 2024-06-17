@@ -80,6 +80,7 @@ int main(int argc, char * argv[])
 		}
 		i++;
 	    }
+		int flag=0;
 	    while(1)
 	    {
 		printf("\n1.Create Database\n2.Display Database\n3.Search Database\n4.Save Database\n5.Update Database\n6.Exit\nEnter your Choice :");
@@ -88,13 +89,21 @@ int main(int argc, char * argv[])
 		{
 		    case 1 :
 			printf("\nYou entered create database\n");
-			if(create(arr,head) == success)
+			if(flag == 0)
 			{
+			  if(create(arr,head) == success)
+			  {
+				flag =1;
 			    printf("\nSuccessfully created\n");
-			}
+			  }
 			else
 			{
 			    printf("\nCreation failed\n");
+			}
+			}
+			else
+			{
+			    printf("\nSuccessfully Created\n");
 			}
 			break;
 		    case 2:
@@ -153,7 +162,9 @@ int main(int argc, char * argv[])
 			if(strcmp(cmp,".txt") == 0)
 			{
 			    FILE *fptr = fopen(file,"r");
-			    printf("File is %s\n",file);
+			    //printf("File is %s\n",file);
+				if(flag == 0)
+				{
 			    if(update(fptr,arr,&head) == success)
 			    {
 				printf("\nUpdating of file is Done\n");
@@ -162,6 +173,11 @@ int main(int argc, char * argv[])
 			    {
 				printf("\nUpdating of file is Failure\n");
 			    }
+			}
+			}
+			else
+			{
+				printf("\n Updating file is done\n");
 			}
 			else
 			{
