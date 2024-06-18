@@ -158,7 +158,7 @@ int main(int argc, char * argv[])
 			printf("\nyou Entered Update database\n");
 			printf("\nEnter the file name : ");
 			scanf("%s",file);
-			cmp = strstr(file,".txt");
+			cmp = strstr(file,".");
 			if(strcmp(cmp,".txt") == 0)
 			{
 			    FILE *fptr = fopen(file,"r");
