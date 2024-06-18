@@ -359,7 +359,7 @@ status update(FILE *fptr1,hash *arr,invert **head)
 	    }
 	}
     }
-    create(arr, *head);
+   // create(arr, *head);
     return success;
 }
 
